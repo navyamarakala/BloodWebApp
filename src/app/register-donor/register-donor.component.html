@@ -1,0 +1,93 @@
+<div class="col-md-12" *ngIf="data==null">
+    <h3 class="text-center" style="color:green;">Thanks for Coming Forward to Donate!!</h3>
+    <hr style="height: 2px; border-width: 5px; background-color: aqua;" />
+    <form [formGroup]="regForm" (ngSubmit)="formSubmit()"> 
+        
+        <div class="form-group">
+            <label for="name"> Name </label>
+            <input inputRef type="text" id="name" formControlName="name" class="form-control" >
+            <span 
+            *ngIf="regForm.get('name').invalid && regForm.get('name').touched"
+            class="help-block" style="color: red;">Please enter User Name</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Mail ID</label>
+            <input type="email" id="mailId" formControlName="mailId" class="form-control" >
+            <span 
+            *ngIf="regForm.get('mailId').invalid && regForm.get('mailId').touched"
+            class="help-block" style="color: red;">Please enter Valid EmailId</span>
+           
+        </div>
+    
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="set password" id="password" formControlName="password" class="form-control" >
+            <span *ngIf="regForm.get('password').invalid && regForm.get('password').touched"
+            class="help-block" style="color: red;">Please put any sample passowrd for future login to edit your Details</span>
+            
+        </div>
+    
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="tel" id="mobileNum"  formControlName="mobileNum" class="form-control">
+            <span 
+            *ngIf="regForm.get('mobileNum').invalid && regForm.get('mobileNum').touched"
+            class="help-block" style="color: red;">Please enter Valid Mobile Number</span>
+        </div>
+    
+        <div class="form-group">
+            <label>Blood Group</label> 
+            <select class="form-control" id="bloodGroup" formControlName="bloodGroup">
+                <option value="default">--Select Your Blood Group--</option>
+                <option value="A Positive">A Positive</option>
+                <option value="A Negative">A Negative</option>
+                <option value="B Positive">B Positive</option>
+                <option value="B Negative">B Negative</option>
+                <option value="O Positive">O Positive</option>
+                <option value="O Negative">O Negative</option>
+            </select>
+            <span 
+            *ngIf="regForm.get('bloodGroup').invalid && regForm.get('bloodGroup').touched"
+            class="help-block" style="color: red;">Please select your blood group</span>
+        </div>
+    
+        <div class="form-group">
+            <label>State</label> 
+            <select class="form-control" id="state" formControlName="state">
+                <option value="default">--Select Your State--</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="TamilNadu">TamilNadu</option>
+                <option value="Telangana">Telangana</option>
+            </select>
+            <span 
+            *ngIf="regForm.get('state').invalid && regForm.get('state').touched"
+            class="help-block" style="color: red;">Please Select your state</span>
+        </div>
+    
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" id="city" class="form-control" formControlName="city" >
+            <span 
+            *ngIf="regForm.get('city').invalid && regForm.get('city').touched"
+            class="help-block" style="color: red;">Please enter your City</span>
+        </div>
+    
+        <div class="form-group">
+            <label>Pincode</label>
+            <input type="text" id="pincode" class="form-control" formControlName="pincode">
+            <span 
+            *ngIf="regForm.get('pincode').invalid && regForm.get('pincode').touched"
+            class="help-block" style="color: red;">Please enter your Pincode</span>
+        </div>
+        <br>
+        <div class="btn-group">
+        <button class="btn btn-success me-2" type="submit"  [disabled]="regForm.invalid">Submit</button>
+        <button class="btn btn-primary" type="reset" >Reset</button>
+        </div>
+    </form>
+    </div>
+    <div [hidden]="data==null" class="text-center" style="color:green;">{{data}}</div>
+    

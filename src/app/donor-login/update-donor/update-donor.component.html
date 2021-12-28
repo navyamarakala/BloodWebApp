@@ -1,0 +1,65 @@
+<div class="col-md-12">
+    <h3 class="text-center">Update Your Details!!</h3>
+    <form (ngSubmit)="formSubmit()">
+        
+        <div class="form-group">
+            <label> Name </label>
+            <input type="text" id="name" class="form-control" [(ngModel)]="donor.name" name="name">
+        </div>
+        
+        <div class="form-group">
+            <label>Mail ID</label>
+            <input type="text" id="mailId" class="form-control" [(ngModel)]="donor.mailId" name="mailId">
+        </div>
+    
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="set password" id="password" class="form-control" [(ngModel)]="donor.password" name="password">
+        </div>
+    
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="tel" id="mobileNum" pattern="[789][0-9]{9}"
+            required="required" class="form-control" [(ngModel)]="donor.mobileNum" name="mobileNum">
+        </div>
+    
+        <div class="form-group">
+            <label>Blood Group</label> 
+            <select class="form-control" id="bloodGroup" [(ngModel)]="donor.bloodGroup" name="bloodGroup">
+                <option value="default">--Select Your Blood Group--</option>
+                <option value="A Positive">A Positive</option>
+                <option value="A Negative">A Negative</option>
+                <option value="B Positive">B Positive</option>
+                <option value="B Negative">B Negative</option>
+                <option value="O Positive">O Positive</option>
+                <option value="O Negative">O Negative</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label>State</label> 
+            <select class="form-control" id="state" [(ngModel)]="donor.state" name="state">
+                <option value="default">--Select Your State--</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="TamilNadu">TamilNadu</option>
+                <option value="Telangana">Telangana</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" id="city" class="form-control" [(ngModel)]="donor.city"  name="city">
+        </div>
+    
+        <div class="form-group">
+            <label>Pincode</label>
+            <input type="text" id="pincode" class="form-control" [(ngModel)]="donor.pincode" name="pincode">
+        </div>
+        <br>
+        <button class="btn btn-success mr-3" type="submit">Update</button>
+    </form>
+    
+    </div>
+    <div *ngIf="updateMessage!=null" class="text-center" style="color: green;">{{updateMessage}}</div>

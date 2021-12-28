@@ -1,0 +1,41 @@
+<section id="tabs" class="mb-2">
+    <div class="col-xs-12 ">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">   
+          <button  type="button" class="btn btn-white me-2" (click)="getRequiredDonors()">Required Donors</button>
+          <button  type="button" class="btn btn-white" (click)="getAllRequiredDonors()">All Donors with the given Blood group</button>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <h2 class="text-center" style="color: green;">Donors</h2>
+            <hr style="height: 3px; border-width: 5px; background-color: aqua;" /><br>
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr style="color:green;">
+                        <th>Name</th>
+                        <th>Blood Group</th>
+                        <th>EmailId</th>
+                        <th>Phone Number</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Pincode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let donor of donors">
+                        <td>{{donor.name}}</td>
+                        <td>{{donor.bloodGroup}}</td>
+                        <td>{{donor.mailId}}</td>
+                        <td>{{donor.mobileNum}}</td>                     
+                        <td>{{donor.city}}</td>
+                        <td>{{donor.state}}</td>                     
+                        <td>{{donor.pincode}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+  
+  
+  

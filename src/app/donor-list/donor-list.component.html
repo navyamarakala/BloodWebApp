@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Donors</title>
+    
+</head>
+<body>
+    
+            <h2 class="text-center" style="color: green;">List of All Donors</h2>
+            <hr style="height: 3px; border-width: 5px; background-color: aqua;" /><br>
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr style="color:green;">
+                        <th>Name</th>
+                        <th>Blood Group</th>
+                        <th>EmailId</th>
+                        <th>Phone Number</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Pincode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let donor of donors">
+                        <td>{{donor.name}}</td>
+                        <td>{{donor.bloodGroup}}</td>
+                        <td>{{donor.mailId}}</td>
+                        <td>{{donor.mobileNum}}</td>                     
+                        <td>{{donor.city}}</td>
+                        <td>{{donor.state}}</td>                     
+                        <td>{{donor.pincode}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+</body>
+</html>

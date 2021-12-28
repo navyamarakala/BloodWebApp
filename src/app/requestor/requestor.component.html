@@ -1,0 +1,72 @@
+<h3>Need Blood? Please provide the below Details</h3>
+
+<form [formGroup]="requestorForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Requestor Name </label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        <span 
+        *ngIf="requestorForm.get('name').invalid && requestorForm.get('name').touched"
+        class="help-block" style="color: red;">Please enter your Name</span>
+    </div>
+
+    <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="tel" id="mobileNum"
+        required="required" class="form-control" formControlName="mobileNum">
+        <span 
+        *ngIf="requestorForm.get('mobileNum').invalid && requestorForm.get('mobileNum').touched"
+        class="help-block" style="color: red;">Please enter Mobile Number to contact</span>
+    </div>
+
+    <div class="form-group">
+        <label>Required Blood Group</label> 
+        <select class="form-control" id="bloodGroup" formControlName="bloodGroup">
+            <option value="default">--Select Your Blood Group--</option>
+                <option value="A Positive">A Positive</option>
+                <option value="A Negative">A Negative</option>
+                <option value="B Positive">B Positive</option>
+                <option value="B Negative">B Negative</option>
+                <option value="O Positive">O Positive</option>
+                <option value="O Negative">O Negative</option>
+        </select>
+        <span 
+        *ngIf="requestorForm.get('bloodGroup').invalid && requestorForm.get('bloodGroup').touched"
+        class="help-block" style="color: red;">Please Select required Blood Group</span>
+    </div>
+
+    <div class="form-group">
+        <label>State</label> 
+        <select class="form-control" id="state" formControlName="state">
+            <option value="default">--Select Your State--</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="TamilNadu">TamilNadu</option>
+            <option value="Telangana">Telangana</option>
+        </select>
+        <span 
+        *ngIf="requestorForm.get('state').invalid && requestorForm.get('state').touched"
+        class="help-block" style="color: red;">Please select your State</span>
+    </div>
+
+    <div class="form-group">
+        <label>City</label>
+        <input type="text" id="city" class="form-control" formControlName="city">
+        <span 
+        *ngIf="requestorForm.get('city').invalid && requestorForm.get('city').touched"
+        class="help-block" style="color: red;">Please enter your city Name</span>
+    </div>
+
+    <div class="form-group">
+        <label>Pincode</label>
+        <input type="text" id="pincode" class="form-control" formControlName="pincode">
+        <span 
+        *ngIf="requestorForm.get('pincode').invalid && requestorForm.get('pincode').touched"
+        class="help-block" style="color: red;">Please enter your pincode</span>
+    </div>
+    <br>
+    <div >
+    <button class="btn btn-success me-3" type="submit" [disabled]="requestorForm.invalid">Submit</button>
+    <button class="btn btn-success" type="reset" [disabled]="requestorForm.untouched">Reset</button>
+    </div>
+</form>

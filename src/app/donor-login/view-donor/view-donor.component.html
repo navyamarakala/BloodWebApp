@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor</title>
+</head>
+<body>
+    <div *ngIf="dataMessage==null">
+            <h2 class="text-center">You can edit your Details or you can Delete your Account</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>EmailId</th>
+                        <th>Mobile Number</th>
+                        <th>Blood Group</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Pincode</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{donor.name}}</td>
+                        <td>{{donor.mailId}}</td>
+                        <td>{{donor.mobileNum}}</td>
+                        <td>{{donor.bloodGroup}}</td>
+                        <td>{{donor.city}}</td>
+                        <td>{{donor.state}}</td>
+                        <td>{{donor.pincode}}</td>
+                        <td>{{donor.password}}</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+    <button class="btn btn-info me-3" (click)=updateDonor(donor.mailId)>Update</button>
+    <button class="btn btn-info" (click)=deleteDonor(donor.mailId)>Delete</button>
+</div>
+<div [hidden]="dataMessage==null" style="color:green;">{{dataMessage}}</div>
+
+</body>
+</html>
+
